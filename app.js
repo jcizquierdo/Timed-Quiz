@@ -3,24 +3,41 @@
 function start() {
     var startHTML = "<h1>Coding Quiz</h1>";
     startHTML += "<h2 id='score'>Try to answer the following code related questions within the time-limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>";
-    var element = document.getElementById("quiz");
-    element.innerHTML = startHTML;
+    var info = document.getElementById("quiz");
+    info.innerHTML = startHTML;
     var startBtn = document.createElement("button");
     startBtn.innerHTML = "Start Quiz!";
-    
-    document.body.appendChild(startBtn);
-    // startBtn.onclick = function() {
-        
-    // }
-}
-    
-    // startBtn.addEventListener("click", function() {populate()})
+    info.appendChild(startBtn);
+    startBtn.addEventListener("click", populate)
 
+}
+//     startBtn.style.textAlign = "center";
+    // var highScores = document.createElement("a");
+    // highScores.innerHTML = "View HighScores"
+    // startBtn.onclick = function() {
+        // startBtn.addEventListener("click", function() {populate()})
+    // }
+
+    
+// var timerEl = document.getElementById("timer");
 
 // function timer() {
 //     var timeLeft = 60;
 
-//     var 
+//     var timeInterval = setInterval(function () {
+//         timeInterval.textContent = timeLeft + " seconds remaining";
+//         timeLeft--;
+        
+//         if (not correct answer) {
+            //timeLeft - 10
+//          } 
+
+//         else (timeLeft === 0) {
+//             timeInterval.textContent = "";
+//             window.alert("Time's up!");
+//             showScores();
+//         }
+//     }, 1000);
 // }
 
 
@@ -34,7 +51,7 @@ function populate() {
     else {
         // show question
         var element = document.getElementById("question");
-        element.innerHTML = quiz.getQuestionIndex().text;
+        element.textContent = quiz.getQuestionIndex().text;
 
         // show options
         var choices = quiz.getQuestionIndex().choices;
@@ -70,11 +87,11 @@ function showScores() {
     gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + "</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
+    //localStorage.setItem(quiz.score);
 };
 
 // create questions
 var questions = [
-    // new Question("Try to answer the following code related questions within the time-limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!", ["START", "START", "START", "START"], "START",
     new Question("Commonly used data types DO NOT include", ["strings", "booleans","alerts", "numbers"], "alerts"),
     new Question("The condition in an if/else statement is enclosed within _____. ", ["quotes", "curly brackets", "parantheses", "square brackets"], "parantheses"),
     new Question("Arrays in JavaScript can be used to store _____. ", ["numbers and strings", "other arrays","booleans", "all of the above"], "all of the above"),
@@ -86,7 +103,9 @@ var questions = [
 // create quiz
 var quiz = new Quiz(questions);
 
+// timer();
+
 start();
 
 // display quiz
-populate();
+// populate();

@@ -6,4 +6,7 @@ function Question(text, choices, answer) {
 
 Question.prototype.isCorrectAnswer = function(choice) {
     return this.answer === choice;
-}
+    
+    // if (this.choice !== this.answer) {
+    //     timeLeft = timeLeft - 10
+    }
