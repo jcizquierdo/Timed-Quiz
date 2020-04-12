@@ -1,16 +1,16 @@
 // debugger;
 
-function start() {
-    var startHTML = "<h1>Coding Quiz</h1>";
-    startHTML += "<h2 id='score'>Try to answer the following code related questions within the time-limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>";
-    var info = document.getElementById("quiz");
-    info.innerHTML = startHTML;
-    var startBtn = document.createElement("button");
-    startBtn.innerHTML = "Start Quiz!";
-    info.appendChild(startBtn);
-    startBtn.addEventListener("click", populate)
+// function start() {
+//     var startHTML = "<h1>Coding Quiz</h1>";
+//     startHTML += "<h2 id='score'>Try to answer the following code related questions within the time-limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>";
+//     var element = document.getElementById("quiz");
+//     element.innerHTML = startHTML;
+//     var startBtn = document.createElement("button");
+//     startBtn.innerHTML = "Start Quiz!";
+//     element.appendChild(startBtn);
+//     startBtn.addEventListener("click", populate)
 
-}
+// }
 //     startBtn.style.textAlign = "center";
     // var highScores = document.createElement("a");
     // highScores.innerHTML = "View HighScores"
@@ -105,7 +105,7 @@ var quiz = new Quiz(questions);
 
 // timer();
 
-start();
+// start();
 
 // display quiz
-// populate();
+populate();
